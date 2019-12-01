@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
         Button btn_check = (Button) findViewById(R.id.btn_check);
         //final MaskEditText edit_s = (MaskEditText) findViewById(R.id.txt_sin);
-        final EditText edit_s = (EditText) findViewById(R.id.txt_sin);
+        final EditText edit_s = (EditText) findViewById(R.id.txtSin);
 
         btn_check.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         EditText ed =(EditText)findViewById(R.id.txtSin);
 
 
-    }
+    
 
 
     public boolean checkNo(String sn){
