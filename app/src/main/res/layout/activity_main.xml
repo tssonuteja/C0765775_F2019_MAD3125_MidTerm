@@ -13,6 +13,17 @@
         android:hint="Enter Sin Number"
         android:textSize="20dp"/>
 
+    <Button
+        android:id="@+id/btn_sincheck"
+        android:layout_width="wrap_content"
+        android:id="@+id/btn_check"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@+id/txtSin"
+        android:text="Check"
+        android:textSize="16sp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="50dp"
 
 
 
