@@ -13,21 +13,22 @@
         android:hint="Enter Sin Number"
         android:textSize="20dp" />
 
+
     <Button
         android:id="@+id/btn_check"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/txtLastname"
-        android:hint="check"/>
-
-
+        android:layout_below="@+id/txtRrsp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="41dp"
+        android:hint="Submit" />
 
     <EditText
         android:id="@+id/txtFirstname"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/txtSin"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:hint="Enter your First Name"
         android:textSize="18.5sp" />
 
@@ -37,7 +38,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/txtFirstname"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:hint="Enter your Last Name"
         android:textSize="18.5sp" />
 
@@ -47,8 +48,8 @@
         android:id="@+id/editText1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="100dp"
-        android:layout_marginTop="150dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="200dp"
         android:ems="10"
         android:hint="Enter birth Date" />
     <Button
@@ -56,6 +57,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/editText1"
+        android:layout_marginTop="40dp"
         android:layout_marginLeft="100dp"
         android:text="Ok" />
     <TextView
@@ -67,5 +69,37 @@
         android:layout_marginTop="10dp"
         android:textStyle="bold"
         android:textSize="18dp"/>
+
+    <EditText
+        android:id="@+id/txtgender"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button1"
+        android:layout_marginTop="50dp"
+        android:hint="Gender"
+        android:textSize="18.5sp" />
+
+
+    <EditText
+        android:id="@+id/txtIncome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtgender"
+        android:layout_marginTop="50dp"
+        android:hint="Enter your Gross income"
+        android:textSize="18.5sp" />
+
+    <EditText
+        android:id="@+id/txtRrsp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtIncome"
+        android:layout_marginTop="60dp"
+        android:hint="Enter RRSP Contribution"
+        android:textSize="18.5sp" />
+
+
+
+
 
 </RelativeLayout>
