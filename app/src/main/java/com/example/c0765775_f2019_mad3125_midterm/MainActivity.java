@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         EditText ed =(EditText)findViewById(R.id.txtSin);
 
 
-    
+
 
 
     public boolean checkNo(String sn){
