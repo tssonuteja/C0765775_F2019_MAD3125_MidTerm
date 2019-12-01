@@ -11,9 +11,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Enter Sin Number"
-        android:textSize="20dp"/>
+        android:textSize="20dp" />
 
-    .
+    <Button
+        android:id="@+id/btn_check"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtLastname"
+        android:hint="check"/>
 
 
 
@@ -26,5 +31,41 @@
         android:hint="Enter your First Name"
         android:textSize="18.5sp" />
 
+
+    <EditText
+        android:id="@+id/txtLastname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtFirstname"
+        android:layout_marginTop="10dp"
+        android:hint="Enter your Last Name"
+        android:textSize="18.5sp" />
+
+
+
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="150dp"
+        android:ems="10"
+        android:hint="Enter birth Date" />
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editText1"
+        android:layout_marginLeft="100dp"
+        android:text="Ok" />
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button1"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="10dp"
+        android:textStyle="bold"
+        android:textSize="18dp"/>
 
 </RelativeLayout>
