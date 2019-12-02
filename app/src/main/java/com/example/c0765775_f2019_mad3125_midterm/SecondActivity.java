@@ -10,7 +10,7 @@ public class SecondActivity extends AppCompatActivity {
     TextView fullName;
     TextView cAge;
     TextView taxfilingDate;
-    TextView federalTax;
+    TextView federallTax;
     TextView provincialTax;
     TextView carryfrdcpp;
     TextView pEi;
@@ -27,7 +27,7 @@ public class SecondActivity extends AppCompatActivity {
         fullName = (TextView)findViewById(R.id.txtfullName);
         cAge = (TextView)findViewById(R.id.txtage);
         taxfilingDate = (TextView)findViewById(R.id.taxFilingdate);
-        federalTax = (TextView)findViewById(R.id.txtfederalTax);
+        federallTax = (TextView)findViewById(R.id.txtfederalTax);
         provincialTax = (TextView)findViewById(R.id.txtprovincialTax);
         carryfrdcpp = (TextView)findViewById(R.id.txtcarryForwardCpp);
         pEi = (TextView)findViewById(R.id.txteI);
@@ -48,9 +48,14 @@ public class SecondActivity extends AppCompatActivity {
             federalTax = (federalTax/100)*26;
         }else if (federalTax >= 147667.01 && federalTax <= 210371){
             federalTax = (federalTax/100)*29;
-        }else if (federalTax >= 210371.01){
-            federalTax = (federalTax/100)*33;
+        }else if (federalTax >= 210371.01) {
+            federalTax = (federalTax / 100) * 33;
         }
+            String finalresult = String.valueOf(federalTax);
+
+            federallTax.setText(finalresult+"$");
+
+
 
 
 
