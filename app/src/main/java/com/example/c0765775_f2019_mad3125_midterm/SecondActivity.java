@@ -8,6 +8,7 @@ import android.widget.TextView;
 public class SecondActivity extends AppCompatActivity {
 
     TextView fullName;
+    TextView cAge;
     TextView taxfilingDate;
     TextView federalTax;
     TextView provincialTax;
@@ -15,10 +16,18 @@ public class SecondActivity extends AppCompatActivity {
     TextView pEi;
     TextView rrsp;
     TextView taxin;
+    private double eI;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
+
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_second);
+        fullName = (TextView)findViewById(R.id.txtfullName);
+        cAge = (TextView)findViewById(R.id.txtage);
+        taxfilingDate = (TextView)findViewById(R.id.taxFilingdate);
+        federalTax = (TextView)findViewById(R.id.txtfederalTax);
     }
 }
