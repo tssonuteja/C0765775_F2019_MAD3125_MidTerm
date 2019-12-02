@@ -1,10 +1,12 @@
 package com.example.c0765775_f2019_mad3125_midterm;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.graphics.Typeface;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.InputType;
 import android.text.Spannable;
@@ -67,34 +69,25 @@ public class MainActivity extends AppCompatActivity {
         year = calendar.get(Calendar.YEAR);
 
 
-        birth.setOnClickListener(new View.OnClickListener() {
 
+        birth.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public void onClick(View v) {
-                birth.setCursorVisible(false);
-                datePickerDialog = new DatePickerDialog(MainActivity.this,
-                        new DatePickerDialog.OnDateSetListener() {
+                Calendar cal = Calendar.getInstance();
+                int year = cal.get(Calendar.YEAR);
+                int month = cal.get(Calendar.MONTH);
+                int day = cal.get(Calendar.DAY_OF_MONTH);
 
-                            @Override
-                            public void onDateSet(DatePicker view, int year1,
-                                                  int monthOfYear, int dayOfMonth) {
-                                year = year1;
-                                month = monthOfYear;
-                                day = dayOfMonth;
-                                datePickerDialog.updateDate(year, monthOfYear,
-                                        dayOfMonth);
-                                birth.setText((month + 1) + "/" + day + "/"
-                                        + year);
-                            }
-
-                        }, year, month, day);
-
-                datePickerDialog.setTitle("Select Date");
+                DatePickerDialog datePickerDialog = new DatePickerDialog(v.getContext(),android.R.style.Theme_Black, datePickerListener, year,month,day);
+                datePickerDialog.getDatePicker().setMaxDate(new Date().getTime());
                 datePickerDialog.show();
-
             }
-
         });
+
+
+
+
 
 
         findViewById(R.id.btnsubmit).setOnClickListener(new View.OnClickListener() {
@@ -263,6 +256,36 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+
+
+    // reference for DOB & AGE Calculation taken from https://www.youtube.com/watch?v=TTFfQgikQiU
+
+    private DatePickerDialog.OnDateSetListener datePickerListener = new DatePickerDialog.OnDateSetListener() {
+        @Override
+        public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+            Calendar c = Calendar.getInstance();
+            c.set(Calendar.YEAR, year);
+            c.set(Calendar.MONTH, month);
+            c.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+            String format = new SimpleDateFormat("dd MMM YYYY").format(c.getTime());
+            birth.setText(format);
+           // age.setText(Integer.toString(calculateAge(c.getTimeInMillis())));
+        }
+    };
+
+    int calculateAge(long date){
+        Calendar cal = Calendar.getInstance();
+        cal.setTimeInMillis(date);
+
+        Calendar today = Calendar.getInstance();
+        int age = today.get(Calendar.YEAR) - cal.get(Calendar.YEAR);
+
+        if(today.get(Calendar.DAY_OF_MONTH) < cal.get(Calendar.DAY_OF_MONTH)){
+            age--;
+        }
+        return age;
+    }
+
 
 
     private int getAge(String dobString) {
