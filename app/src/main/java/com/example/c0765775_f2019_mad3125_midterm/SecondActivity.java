@@ -48,6 +48,9 @@ public class SecondActivity extends AppCompatActivity {
             federalTax = (federalTax/100)*26;
         }else if (federalTax >= 147667.01 && federalTax <= 210371){
             federalTax = (federalTax/100)*29;
+        }else if (federalTax >= 210371.01){
+            federalTax = (federalTax/100)*33;
+        }
 
 
 
