@@ -16,6 +16,7 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:text="SIN Number"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -37,6 +38,7 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:text="First Name"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -58,6 +60,7 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:text="Last Name"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -80,6 +83,7 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:text="Birth Date"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -102,7 +106,8 @@
             android:id="@+id/gender"
             android:layout_width="140dp"
             android:layout_height="wrap_content"
-            android:text="Select Gender" />
+            android:text="Gender"
+            android:textStyle="bold"/>
 
         <RadioGroup
             android:id="@+id/radioGroup1"
@@ -145,6 +150,7 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:text="Gross Income"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -166,6 +172,7 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:text="RRSP Contributed"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
