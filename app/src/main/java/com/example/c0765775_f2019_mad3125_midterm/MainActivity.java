@@ -59,6 +59,38 @@ public class MainActivity extends AppCompatActivity {
         year = calendar.get(Calendar.YEAR);
 
 
+
+        birth.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                birth.setCursorVisible(false);
+                datePickerDialog = new DatePickerDialog(MainActivity.this,
+                        new DatePickerDialog.OnDateSetListener() {
+
+                            @Override
+                            public void onDateSet(DatePicker view, int year1,
+                                                  int monthOfYear, int dayOfMonth) {
+                                year = year1;
+                                month = monthOfYear;
+                                day = dayOfMonth;
+                                datePickerDialog.updateDate(year, monthOfYear,
+                                        dayOfMonth);
+                                birth.setText((month + 1) + "/" + day + "/"
+                                        + year);
+                            }
+
+                        }, year, month, day);
+
+                datePickerDialog.setTitle("Select Date");
+                datePickerDialog.show();
+
+            }
+
+        });
+
+
+
         Button submit = (Button) findViewById(R.id.btnsubmit);
 
 
