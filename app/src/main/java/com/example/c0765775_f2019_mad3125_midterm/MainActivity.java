@@ -3,8 +3,14 @@ package com.example.c0765775_f2019_mad3125_midterm;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.text.InputType;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.style.ForegroundColorSpan;
+import android.text.style.TypefaceSpan;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -16,7 +22,9 @@ import android.widget.Toast;
 
 import com.santalu.maskedittext.MaskEditText;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -137,10 +145,117 @@ public class MainActivity extends AppCompatActivity {
                                          int eighth = Integer.parseInt(eightDigits.substring(7, 8)) * 2;
 
 
+                                         if (second > 9) {
+
+                                             int firstHalf = second / 10;
+
+                                             int secondHalf = second % 10;
+
+                                             int sum = firstHalf + secondHalf;
+
+                                             second = sum;
+
+                                         }
+
+                                         if (fourth > 9) {
+
+                                             int firstHalf1 = fourth / 10;
+
+                                             int secondHalf1 = fourth % 10;
+
+                                             int sum1 = firstHalf1 + secondHalf1;
+
+                                             fourth = sum1;
+
+                                         }
+
+                                         if (sixth > 9) {
+
+                                             int firstHalf2 = sixth / 10;
+
+                                             int secondHalf2 = sixth % 10;
+
+                                             int sum2 = firstHalf2 + secondHalf2;
+
+                                             sixth = sum2;
+
+                                         }
+
+                                         if (eighth > 9) {
+
+                                             int firstHalf3 = eighth / 10;
+
+                                             int secondHalf3 = eighth % 10;
+
+                                             int sum3 = firstHalf3 + secondHalf3;
+
+                                             eighth = sum3;
+
+                                         }
+
+                                         total = first + second + third + fourth + fifth + sixth + seventh + eighth;
+
+                                         System.out.println("This is the total so far: " + total);
+
+                                         total2 = total;
+
+                                         while (total > 0) {
+                                             counter++;
+                                             total = total - 10;
+                                         }
+                                         int result = counter * 10;
+
+                                         System.out.println("This is the next highest number divisble by 10: " + result);
+                                         remaining = result - total2;
+                                         String ewref = String.valueOf(sin.getText());
+
+                                         if (remaining == Integer.parseInt(checkDigit)) {
+
+                                             System.out.println("You've entered a valid Social Insurance Number.");
+
+                                         } else {
+                                             System.out.println("Invalid Social Insurance Number.");
+                                         }
+
+                                         if (ageee >= 18) {
+
+                                             String mIncome = String.valueOf(income.getText());
+
+                                             String upperString = fname.substring(0, 1).toUpperCase() + fname.substring(1);
+                                             final String both = lname.toUpperCase() + "," + upperString;
+                                             System.out.println("dddddddd  " + dateofBirth + "  " + mAge + " " + both);
+
+                                             Date c = Calendar.getInstance().getTime();
+                                             System.out.println("Current time => " + c);
+                                             SimpleDateFormat df = new SimpleDateFormat("dd/MM/yy");
+                                             final String formattedDate = df.format(c);
+                                             Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+                                             intent.putExtra("fullName", both);
+                                             intent.putExtra("age", mAge);
+                                             intent.putExtra("currentdate", formattedDate);
+                                             intent.putExtra("grossInc", grossInc);
+                                             intent.putExtra("rrspContribution", rrspcntrr);
+                                             startActivity(intent);
+
+                                         } else {
+                                             Typeface font = Typeface.createFromAsset(getAssets(), "fonts/SpaceQuestItalic-60Rx.ttf");
+                                             SpannableString spannableString = new SpannableString(" Not eligible to file tax for current year 2019 ");
+                                             spannableString.setSpan(
+                                                     new ForegroundColorSpan(getResources().getColor(android.R.color.holo_red_dark)),
+                                                     0,
+                                                     spannableString.length(),
+                                                     0);
+
+                                             spannableString.setSpan(new TypefaceSpan(font), 0, spannableString.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+                                             Toast.makeText(MainActivity.this, spannableString, Toast.LENGTH_SHORT).show();
+                                         }
 
 
 
-        Button submit = (Button) findViewById(R.id.btnsubmit);
+
+
+                                         Button submit = (Button) findViewById(R.id.btnsubmit);
 
 
         btn_check.setOnClickListener(new View.OnClickListener() {
