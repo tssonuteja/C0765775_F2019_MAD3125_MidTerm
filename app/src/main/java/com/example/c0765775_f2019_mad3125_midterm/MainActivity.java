@@ -12,21 +12,28 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.santalu.maskedittext.MaskEditText;
+
 import java.util.Calendar;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class MainActivity extends AppCompatActivity {
 
-    DatePickerDialog picker;
-    EditText eText;
-    Button btnGet;
-    TextView tvw;
+    EditText sin;
+    EditText firstName;
+    EditText lastName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Button btn_check = (Button) findViewById(R.id.btn_check);
+        final MaskEditText edit_s = (MaskEditText) findViewById(R.id.txtSin);
+        sin = (EditText) findViewById(R.id.txtSin);
+        
+
 
 
     }
