@@ -13,10 +13,19 @@
         android:hint="Enter Sin Number"
         android:textSize="20dp"
         />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_check"
+        android:text="Check"
+        android:layout_below="@+id/txtSin"
+        android:layout_marginTop="0dp"/>
+
+
 
 
     <Button
-        android:id="@+id/btn_check"
+        android:id="@+id/btnSubmit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/txtRrsp"
@@ -29,7 +38,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/txtSin"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="35dp"
         android:hint="Enter your First Name"
         android:textSize="18.5sp" />
 

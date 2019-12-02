@@ -32,12 +32,44 @@ public class MainActivity extends AppCompatActivity {
         Button btn_check = (Button) findViewById(R.id.btn_check);
         final MaskEditText edit_s = (MaskEditText) findViewById(R.id.txtSin);
         sin = (EditText) findViewById(R.id.txtSin);
-        
 
+
+        Button submit = (Button) findViewById(R.id.btnSubmit);
+
+
+        btn_check.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (checkSin(edit_s.getText().toString())) {
+                    Toast.makeText(getApplicationContext(), "Please Enter Valid 9-Digit Sin Number", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(getApplicationContext(), "Sin Number is Valid", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+    }
+
+        public Boolean checkSin(String sn)
+        {
+            Boolean check = false;
+
+            String no ="\\d*\\.?\\d+"; //d is considered as [0-9] & .? as Optional decimal point
+
+            CharSequence inputStr = sn;
+
+            Pattern ptn = Pattern.compile(no,Pattern.CASE_INSENSITIVE);
+            Matcher matcher = ptn.matcher(inputStr);
+
+            if (matcher.matches()){
+                check = true;
+            }
+            return check;
+
+
+        }
 
 
     }
-}
-//test
 //test1
 //test2
