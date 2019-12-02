@@ -90,6 +90,24 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+                         findViewById(R.id.btnsubmit).setOnClickListener(new View.OnClickListener() {
+                             @Override
+                             public void onClick(View v) {
+                                                               if (sin.length() != 0 && birth.length() != 0 && firstName.length() != 0 && lastName.length() != 0 && income.length() != 0 && RRSP.length() != 0) {
+
+
+                                                                   String sinNum = String.valueOf(sin.getText());
+                                                                   String dateofBirth = String.valueOf(birth.getText());
+                                                                   final String mAge = String.valueOf(getAge(dateofBirth));
+                                                                   String fname = String.valueOf(firstName.getText());
+                                                                   String lname = String.valueOf(lastName.getText());
+                                                                   String grsinc = String.valueOf(income.getText());
+                                                                   String rrspcntr = String.valueOf(RRSP.getText());
+                                                                   double grossInc = Double.parseDouble(grsinc);
+                                                                   double rrspcntrr = Double.parseDouble(rrspcntr);
+                                                                   int ageee = Integer.parseInt(mAge);
+
+
 
         Button submit = (Button) findViewById(R.id.btnsubmit);
 
