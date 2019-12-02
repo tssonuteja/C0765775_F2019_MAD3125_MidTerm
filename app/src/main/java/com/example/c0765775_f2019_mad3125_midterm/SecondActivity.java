@@ -33,10 +33,13 @@ public class SecondActivity extends AppCompatActivity {
         pEi = (TextView)findViewById(R.id.txteI);
         carryfrdcpp = (TextView)findViewById(R.id.txtcarryForwardCpp);
         taxin = (TextView)findViewById(R.id.txtIncome);
-       
+
         String fname = getIntent().getStringExtra("fullName");
         String age = getIntent().getStringExtra("age");
         String cdate = getIntent().getStringExtra("currentdate");
+        fullName.setText(fname);
+        cAge.setText(age);
+        taxfilingDate.setText(cdate);
 
 
     }
