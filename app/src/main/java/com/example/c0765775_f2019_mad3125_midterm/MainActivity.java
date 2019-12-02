@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
                 int month = cal.get(Calendar.MONTH);
                 int day = cal.get(Calendar.DAY_OF_MONTH);
 
-                DatePickerDialog datePickerDialog = new DatePickerDialog(v.getContext(),android.R.style.Theme_Black, datePickerListener, year,month,day);
+                DatePickerDialog datePickerDialog = new DatePickerDialog(v.getContext(),android.R.style.Theme_Light, datePickerListener, year,month,day);
                 datePickerDialog.getDatePicker().setMaxDate(new Date().getTime());
                 datePickerDialog.show();
             }
@@ -269,7 +269,7 @@ public class MainActivity extends AppCompatActivity {
             c.set(Calendar.DAY_OF_MONTH, dayOfMonth);
             String format = new SimpleDateFormat("dd MMM YYYY").format(c.getTime());
             birth.setText(format);
-           // age.setText(Integer.toString(calculateAge(c.getTimeInMillis())));
+           //age.setText(Integer.toString(calculateAge(c.getTimeInMillis())));
         }
     };
 
