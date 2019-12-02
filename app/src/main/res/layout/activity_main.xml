@@ -21,7 +21,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/txtRrsp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="41dp"
+        android:layout_marginTop="20dp"
         android:hint="Submit" />
 
     <EditText
@@ -58,25 +58,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/editText1"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="30dp"
         android:layout_marginLeft="100dp"
         android:text="Ok" />
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/button1"
-        android:layout_marginLeft="100dp"
-        android:layout_marginTop="10dp"
-        android:textStyle="bold"
-        android:textSize="18dp"/>
+
 
     <EditText
         android:id="@+id/txtgender"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/button1"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="20dp"
         android:hint="Gender"
         android:textSize="18.5sp" />
 
@@ -86,7 +78,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/txtgender"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="30dp"
         android:hint="Enter your Gross income"
         android:textSize="18.5sp" />
 
@@ -95,7 +87,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/txtIncome"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="30dp"
         android:hint="Enter RRSP Contribution"
         android:textSize="18.5sp" />
 
