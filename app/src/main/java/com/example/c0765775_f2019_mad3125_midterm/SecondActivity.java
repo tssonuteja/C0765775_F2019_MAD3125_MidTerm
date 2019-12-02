@@ -40,6 +40,9 @@ public class SecondActivity extends AppCompatActivity {
         fullName.setText(fname);
         cAge.setText(age);
         taxfilingDate.setText(cdate);
+        double federalTax = getIntent().getDoubleExtra("grossInc",0);
+        if (federalTax <= 12069){
+            federalTax = federalTax;
 
 
     }
