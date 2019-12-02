@@ -93,19 +93,50 @@ public class MainActivity extends AppCompatActivity {
                          findViewById(R.id.btnsubmit).setOnClickListener(new View.OnClickListener() {
                              @Override
                              public void onClick(View v) {
-                                                               if (sin.length() != 0 && birth.length() != 0 && firstName.length() != 0 && lastName.length() != 0 && income.length() != 0 && RRSP.length() != 0) {
+                                 if (sin.length() != 0 && birth.length() != 0 && firstName.length() != 0 && lastName.length() != 0 && income.length() != 0 && RRSP.length() != 0) {
+
+                                     String sinNum = String.valueOf(sin.getText());
+                                     String dateofBirth = String.valueOf(birth.getText());
+                                     final String mAge = String.valueOf(getAge(dateofBirth));
+                                     String fname = String.valueOf(firstName.getText());
+                                     String lname = String.valueOf(lastName.getText());
+                                     String grsinc = String.valueOf(income.getText());
+                                     String rrspcntr = String.valueOf(RRSP.getText());
+                                     double grossInc = Double.parseDouble(grsinc);
+                                     double rrspcntrr = Double.parseDouble(rrspcntr);
+                                     int ageee = Integer.parseInt(mAge);
+
+                                     if (sinNum.length() == 9) {
+                                         String eightDigits = sinNum.substring(0, 8);
+
+                                         String checkDigit = sinNum.substring(8);
+
+                                         System.out.println("The first eight digits are: " + eightDigits);
+
+                                         System.out.println("The Check-digit is: " + checkDigit);
+
+                                         int total;
+
+                                         int total2 = 0;
+
+                                         int counter = 0;
+                                         int first = Integer.parseInt(eightDigits.substring(0, 1)) * 1;
+
+                                         int second = Integer.parseInt(eightDigits.substring(1, 2)) * 2;
+
+                                         int third = Integer.parseInt(eightDigits.substring(2, 3)) * 1;
+
+                                         int fourth = Integer.parseInt(eightDigits.substring(3, 4)) * 2;
+
+                                         int fifth = Integer.parseInt(eightDigits.substring(4, 5)) * 1;
+
+                                         int sixth = Integer.parseInt(eightDigits.substring(5, 6)) * 2;
+
+                                         int seventh = Integer.parseInt(eightDigits.substring(6, 7)) * 1;
+
+                                         int eighth = Integer.parseInt(eightDigits.substring(7, 8)) * 2;
 
 
-                                                                   String sinNum = String.valueOf(sin.getText());
-                                                                   String dateofBirth = String.valueOf(birth.getText());
-                                                                   final String mAge = String.valueOf(getAge(dateofBirth));
-                                                                   String fname = String.valueOf(firstName.getText());
-                                                                   String lname = String.valueOf(lastName.getText());
-                                                                   String grsinc = String.valueOf(income.getText());
-                                                                   String rrspcntr = String.valueOf(RRSP.getText());
-                                                                   double grossInc = Double.parseDouble(grsinc);
-                                                                   double rrspcntrr = Double.parseDouble(rrspcntr);
-                                                                   int ageee = Integer.parseInt(mAge);
 
 
 
