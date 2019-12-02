@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,6 +25,16 @@ public class MainActivity extends AppCompatActivity {
     EditText sin;
     EditText firstName;
     EditText lastName;
+    EditText  birth;
+    EditText  income;
+    EditText  RRSP;
+    RadioGroup genderGroup;
+    RadioButton radioGenderButton;
+    Calendar myCalendar = Calendar.getInstance();
+    private Calendar calendar;
+    int day, month, year;
+    private DatePickerDialog datePickerDialog;
+    private int remaining;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         sin = (EditText) findViewById(R.id.txtSin);
 
 
-        Button submit = (Button) findViewById(R.id.btnSubmit);
+        Button submit = (Button) findViewById(R.id.btnsubmit);
 
 
         btn_check.setOnClickListener(new View.OnClickListener() {
