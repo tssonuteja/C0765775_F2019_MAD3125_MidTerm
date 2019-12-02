@@ -43,6 +43,8 @@ public class SecondActivity extends AppCompatActivity {
         double federalTax = getIntent().getDoubleExtra("grossInc",0);
         if (federalTax <= 12069){
             federalTax = federalTax;
+        }else if (federalTax >= 12069.01 && federalTax <= 47630){
+            federalTax = (federalTax/100)*15;
 
 
     }
