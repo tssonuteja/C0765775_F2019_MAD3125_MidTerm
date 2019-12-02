@@ -41,9 +41,22 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button btn_check = (Button) findViewById(R.id.btn_check);
-        final MaskEditText edit_s = (MaskEditText) findViewById(R.id.txtSin);
         sin = (EditText) findViewById(R.id.txtSin);
+        firstName = (EditText) findViewById(R.id.txtfirstName);
+        lastName = (EditText) findViewById(R.id.txtlastName);
+        birth= (EditText) findViewById(R.id.dob);
+        income = (EditText) findViewById(R.id.txtIncome);
+        RRSP = (EditText) findViewById(R.id.txtRrspContributed);
+        genderGroup = (RadioGroup) findViewById(R.id.radioGroup1);
+
+
+
+        int selectedId = genderGroup.getCheckedRadioButtonId();
+        radioGenderButton = (RadioButton) findViewById(selectedId);
+        calendar = Calendar.getInstance();
+        day = calendar.get(Calendar.DAY_OF_MONTH);
+        month = calendar.get(Calendar.MONTH);
+        year = calendar.get(Calendar.YEAR);
 
 
         Button submit = (Button) findViewById(R.id.btnsubmit);
