@@ -91,6 +91,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         findViewById(R.id.btnsubmit).setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.P)
             @Override
             public void onClick(View v) {
                 if (sin.length() != 0 && birth.length() != 0 && firstName.length() != 0 && lastName.length() != 0 && income.length() != 0 && RRSP.length() != 0) {
@@ -199,7 +200,7 @@ public class MainActivity extends AppCompatActivity {
 
                         System.out.println("This is the next highest number divisble by 10: " + result);
                         remaining = result - total2;
-                        String ewref = String.valueOf(sin.getText());
+                        //String ewref = String.valueOf(sin.getText());
 
                         if (remaining == Integer.parseInt(checkDigit)) {
 
@@ -211,8 +212,7 @@ public class MainActivity extends AppCompatActivity {
 
                         if (ageee >= 18) {
 
-                            String mIncome = String.valueOf(income.getText());
-
+                           
                             String upperString = fname.substring(0, 1).toUpperCase() + fname.substring(1);
                             final String both = lname.toUpperCase() + "," + upperString;
                             System.out.println("dddddddd  " + dateofBirth + "  " + mAge + " " + both);
@@ -233,12 +233,12 @@ public class MainActivity extends AppCompatActivity {
                             Typeface font = Typeface.createFromAsset(getAssets(), "fonts/SpaceQuestItalic-60Rx.ttf");
                             SpannableString spannableString = new SpannableString(" Not eligible to file tax for current year 2019 ");
                             spannableString.setSpan(
-                                    new ForegroundColorSpan(getResources().getColor(android.R.color.holo_red_dark)),
+                                    new ForegroundColorSpan(getResources().getColor(android.R.color.holo_blue_dark)),
                                     0,
                                     spannableString.length(),
                                     0);
 
-                            //spannableString.setSpan(new TypefaceSpan(font), 0, spannableString.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                            spannableString.setSpan(new TypefaceSpan(font), 0, spannableString.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
 
                             Toast.makeText(MainActivity.this, spannableString, Toast.LENGTH_SHORT).show();
                         }
