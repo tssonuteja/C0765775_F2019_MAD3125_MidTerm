@@ -34,7 +34,7 @@ public class SecondActivity extends AppCompatActivity {
         pEi = (TextView)findViewById(R.id.txteI);
         carryfrdcpp = (TextView)findViewById(R.id.txtcarryForwardCpp);
         taxin = (TextView)findViewById(R.id.txtIncome);
-        rrsp= (TextView)findViewById(R.id.txtRrspContributed)
+        rrsp= (TextView)findViewById(R.id.txtRrspContributed);
 
         String fname = getIntent().getStringExtra("fullName");
         String age = getIntent().getStringExtra("age");
@@ -89,6 +89,24 @@ public class SecondActivity extends AppCompatActivity {
         }else {
             carryfrdcpp.setText(finalcfwdrrsp + "$");
         }
+
+
+
+        double ttaxPayed = federalTax + pT;
+        String tax = String.valueOf(ttaxPayed);
+
+        double tttax = getIntent().getDoubleExtra("grossInc",0);
+
+        if (tttax<=53100){
+            eI = tttax/100*1.62;
+        }
+
+        String finalEI = String.valueOf(eI);
+        pEi.setText(finalEI+"$");
+
+        double ttaxincc = tttax - (contribution + eI + rrspContribution );
+        String totaltax = String.valueOf(ttaxincc);
+        taxin.setText(totaltax+"$");
 
 
 
