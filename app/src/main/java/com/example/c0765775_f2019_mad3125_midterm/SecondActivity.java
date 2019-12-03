@@ -55,7 +55,10 @@ public class SecondActivity extends AppCompatActivity {
 
             federallTax.setText(finalresult+"$");
 
+        double pT = getIntent().getDoubleExtra("grossInc",0);
 
+        if (pT <= 10582){
+            pT = pT;
 
 
 
