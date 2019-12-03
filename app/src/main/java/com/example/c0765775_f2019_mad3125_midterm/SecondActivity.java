@@ -67,6 +67,12 @@ public class SecondActivity extends AppCompatActivity {
             pT = (pT/100)*11.16;
         }else if (pT >= 150000.01 && pT <= 220000){
             pT = (pT/100)*12.16;
+        }else if (pT >= 220000.01){
+            pT = (pT/100)*13.16;
+        }
+        String finalPT = String.valueOf(pT);
+        provincialTax.setText(finalPT+"$");
+
 
 
 
