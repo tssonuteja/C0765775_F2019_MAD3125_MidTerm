@@ -63,6 +63,10 @@ public class SecondActivity extends AppCompatActivity {
             pT = (pT/100)*5.05;
         }else if (pT >= 43906.01 && pT <= 87813){
             pT = (pT/100)*9.15;
+        }else if (pT >= 87813.01 && pT<= 150000){
+            pT = (pT/100)*11.16;
+        }else if (pT >= 150000.01 && pT <= 220000){
+            pT = (pT/100)*12.16;
 
 
 
