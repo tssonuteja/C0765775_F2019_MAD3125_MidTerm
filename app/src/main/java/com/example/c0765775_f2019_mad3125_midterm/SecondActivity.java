@@ -2,6 +2,7 @@ package com.example.c0765775_f2019_mad3125_midterm;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -33,6 +34,7 @@ public class SecondActivity extends AppCompatActivity {
         pEi = (TextView)findViewById(R.id.txteI);
         carryfrdcpp = (TextView)findViewById(R.id.txtcarryForwardCpp);
         taxin = (TextView)findViewById(R.id.txtIncome);
+        rrsp= (TextView)findViewById(R.id.txtRrspContributed)
 
         String fname = getIntent().getStringExtra("fullName");
         String age = getIntent().getStringExtra("age");
@@ -77,6 +79,16 @@ public class SecondActivity extends AppCompatActivity {
 
         String finalcfwdcpp = String.valueOf(contribution);
         carryfrdcpp.setText(finalcfwdcpp+"$");
+        double rrspcontr = getIntent().getDoubleExtra("rrspContribution",0);
+        double rrspContribution = (rrspcontr/100)*18;
+
+        String finalcfwdrrsp = String.valueOf(rrspContribution);
+        if (finalcfwdrrsp.startsWith("-")){
+            carryfrdcpp.setText(finalcfwdrrsp+"$");
+            carryfrdcpp.setTextColor(Color.RED);
+        }else {
+            carryfrdcpp.setText(finalcfwdrrsp + "$");
+        }
 
 
 
