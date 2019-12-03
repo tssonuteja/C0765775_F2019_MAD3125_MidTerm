@@ -212,7 +212,7 @@ public class MainActivity extends AppCompatActivity {
 
                         if (ageee >= 18) {
 
-                           
+
                             String upperString = fname.substring(0, 1).toUpperCase() + fname.substring(1);
                             final String both = lname.toUpperCase() + "," + upperString;
                             System.out.println("dddddddd  " + dateofBirth + "  " + mAge + " " + both);
