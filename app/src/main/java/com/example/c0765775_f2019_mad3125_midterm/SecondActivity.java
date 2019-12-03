@@ -72,7 +72,11 @@ public class SecondActivity extends AppCompatActivity {
         }
         String finalPT = String.valueOf(pT);
         provincialTax.setText(finalPT+"$");
+        double cppcontr = getIntent().getDoubleExtra("grossInc",0);
+        double contribution = (cppcontr/100)*5.10;
 
+        String finalcfwdcpp = String.valueOf(contribution);
+        carryfrdcpp.setText(finalcfwdcpp+"$");
 
 
 
